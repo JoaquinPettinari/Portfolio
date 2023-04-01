@@ -4,7 +4,7 @@ import { Grid, Typography } from '@mui/material'
 function Home () {
   return (
     <Grid container>
-      <Typography color={'primary'}>Primary mui</Typography>
+      <Typography color={'primary'}>Home</Typography>
     </Grid>
   )
 }
