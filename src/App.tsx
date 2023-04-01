@@ -1,14 +1,14 @@
-import './App.css';
-import { Grid, Container } from '@mui/material';
-import Home from './pages/Home';
+import './App.css'
+import { Grid, Container } from '@mui/material'
+import Home from './pages/Home/Home'
 
-function App() {
+function App () {
   return (
     <Grid container>
       <Home />
       <Container maxWidth="lg">Home</Container>
     </Grid>
-  );
+  )
 }
 
-export default App;
+export default App
