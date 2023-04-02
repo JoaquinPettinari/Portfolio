@@ -116,9 +116,9 @@ function NavBar () {
             >
               {pages.map(({ label, link }, index) => (
                 <MenuItem key={index} onClick={handleCloseNavMenu}>
-                  <Typography component={'a'} href={link} textAlign="center">
+                  <Button href={link} sx={{ textTransform: 'capitalize' }}>
                     {label}
-                  </Typography>
+                  </Button>
                 </MenuItem>
               ))}
             </Menu>
@@ -184,7 +184,9 @@ const LanguageIcon = ({
   currentLanguage
 }: LanguageIconProps) => (
   <Button
-    onClick={() => { onClick(languague) }}
+    onClick={() => {
+      onClick(languague)
+    }}
     sx={{
       backgroundColor: equals(languague, currentLanguage) ? '#333333' : ''
     }}
