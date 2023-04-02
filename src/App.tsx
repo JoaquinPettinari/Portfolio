@@ -10,7 +10,7 @@ function App () {
   return (
     <Grid container>
       <Home />
-      <Container maxWidth="lg" sx={{ pt: 60 }}>
+      <Container maxWidth="lg">
         <AboutMe />
         <Jobs />
         <Studies />

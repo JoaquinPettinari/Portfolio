@@ -1,11 +1,12 @@
-import { Grid, Typography } from '@mui/material'
+import { Typography } from '@mui/material'
 import { memo } from 'react'
+import Section from '../../ui/Section'
 
 function Studies () {
   return (
-    <Grid>
+    <Section id="studies">
       <Typography color="primary">Studies</Typography>
-    </Grid>
+    </Section>
   )
 }
 

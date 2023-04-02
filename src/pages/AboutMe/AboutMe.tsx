@@ -1,11 +1,12 @@
-import { Grid, Typography } from '@mui/material'
+import { Typography } from '@mui/material'
 import { memo } from 'react'
+import Section from '../../ui/Section'
 
 function AboutMe () {
   return (
-    <Grid>
+    <Section id="about-me">
       <Typography color="primary">About Me</Typography>
-    </Grid>
+    </Section>
   )
 }
 
