@@ -3,16 +3,17 @@ import Home from './pages/Home/Home'
 import AboutMe from './pages/AboutMe/AboutMe'
 import Jobs from './pages/Jobs/Jobs'
 import ContactMe from './pages/ContactMe/ContactMe'
-import Study from './pages/Study/Study'
+import Studies from './pages/Studies/Studies'
+import './i18n'
 
 function App () {
   return (
     <Grid container>
       <Home />
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" sx={{ pt: 60 }}>
         <AboutMe />
         <Jobs />
-        <Study />
+        <Studies />
         <ContactMe />
       </Container>
     </Grid>

@@ -1,11 +1,11 @@
-import { memo } from 'react'
-import { Grid, Typography } from '@mui/material'
+import { memo, Fragment } from 'react'
+import NavBar from '../../ui/NavBar'
 
 function Home () {
   return (
-    <Grid container>
-      <Typography color={'primary'}>Home</Typography>
-    </Grid>
+    <Fragment>
+      <NavBar />
+    </Fragment>
   )
 }
 

@@ -1,11 +1,13 @@
-import { Grid, Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import { memo } from 'react'
 
 function ContactMe () {
   return (
-    <Grid>
-      <Typography color="primary">Contact Me</Typography>
-    </Grid>
+    <Box id="contact-me">
+      <Typography variant="h1" color="primary">
+        Contact Me
+      </Typography>
+    </Box>
   )
 }
 
