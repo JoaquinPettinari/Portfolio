@@ -1,12 +1,12 @@
 import { Grid, Typography } from '@mui/material'
 import { memo } from 'react'
 
-function Study () {
+function Studies () {
   return (
     <Grid>
-      <Typography color="primary">Study</Typography>
+      <Typography color="primary">Studies</Typography>
     </Grid>
   )
 }
 
-export default memo(Study)
+export default memo(Studies)
