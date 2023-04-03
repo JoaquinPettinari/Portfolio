@@ -25,15 +25,15 @@ function Home () {
       <NavBar />
       <Grid container sx={backgroundStyle}>
         <Grid item>
-          <Typography variant="h3">{'<Joaquin Pettinari />'}</Typography>
+          <Typography variant="h3">{'Joaquin Pettinari'}</Typography>
           <Box sx={{ display: 'flex' }}>
             <Typography variant={'h5'} width={'100%'}>
-              I am{' '}
+              {'<I am '}
               <Typewriter
                 words={[
-                  'Front End Developer',
-                  'graduate degree in Computer Science',
-                  'student'
+                  'Front End Developer />',
+                  'graduate degree in Computer Science />',
+                  'student />'
                 ]}
                 cursor
                 loop={10}
