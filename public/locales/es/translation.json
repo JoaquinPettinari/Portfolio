@@ -4,6 +4,13 @@
       "jobs": "Trabajos",
       "studies": "Estudios",
       "contact": "Contacto"
+    },
+    "home": {
+      "iAm": "<Soy ",
+      "frontEnd": "desarrollador Front End />",
+      "graduate": "graduado de Licenciatura en Informática  />",
+      "student": "estudiante",
+      "getInTouch": "Contactame"
     }
 }
   

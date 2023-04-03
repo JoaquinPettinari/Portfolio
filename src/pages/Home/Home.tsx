@@ -4,6 +4,7 @@ import { Box, Button, Grid, Typography } from '@mui/material'
 import { Typewriter } from 'react-simple-typewriter'
 import Section from '../../ui/Section'
 import homeBackground from '../../assets/homeBackground.jpg'
+import { useTranslation } from 'react-i18next'
 
 const backgroundStyle = {
   backgroundImage: `url(${homeBackground})`,
@@ -20,6 +21,7 @@ const backgroundStyle = {
 }
 
 function Home () {
+  const { t } = useTranslation()
   return (
     <Section id="">
       <NavBar />
@@ -28,12 +30,12 @@ function Home () {
           <Typography variant="h3">{'Joaquin Pettinari'}</Typography>
           <Box sx={{ display: 'flex' }}>
             <Typography variant={'h5'} width={'100%'}>
-              {'<I am '}
+              {t('home.iAm')}
               <Typewriter
                 words={[
-                  'Front End Developer />',
-                  'graduate degree in Computer Science />',
-                  'student />'
+                  t('home.frontEnd'),
+                  t('home.graduate'),
+                  t('home.student')
                 ]}
                 cursor
                 loop={10}
@@ -44,7 +46,7 @@ function Home () {
             </Typography>
           </Box>
           <Button variant="contained" sx={{ mt: 2 }} href="#contact-me">
-            Contact Me
+            {t('home.getInTouch')}
           </Button>
         </Grid>
       </Grid>
