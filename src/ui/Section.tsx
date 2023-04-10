@@ -8,7 +8,7 @@ interface SectionProps {
 
 function Section ({ children, id }: SectionProps) {
   return (
-    <Grid id={id} container justifyContent={'center'} height={'100vh'}>
+    <Grid id={id} container justifyContent={'center'} minHeight={'100vh'}>
       {children}
     </Grid>
   )
