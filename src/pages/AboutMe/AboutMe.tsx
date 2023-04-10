@@ -13,6 +13,7 @@ import TsImage from '../../assets/ts.png'
 import CssImage from '../../assets/CSS.png'
 import NodeJsImage from '../../assets/nodejs.png'
 import TechnologysList from './TechnologysList'
+import { useTranslation } from 'react-i18next'
 
 const photoStyle = {
   height: '300px',
@@ -30,6 +31,7 @@ const photoStyle = {
 }
 
 function AboutMe () {
+  const { t } = useTranslation()
   return (
     <Section id="about-me">
       <Grid
@@ -52,13 +54,13 @@ function AboutMe () {
         <Grid item xs={8} pt={4}>
           <TechnologysList
             technologys={technologys}
-            label="Programming Languages"
+            label={t('about.programmingLanguages')}
           />
         </Grid>
         <Grid item xs={8} pt={4}>
           <TechnologysList
             technologys={librariesAndFrameworks}
-            label="Libraries & Frameworks"
+            label={t('about.librariesAndFrameworks')}
           />
         </Grid>
       </Grid>

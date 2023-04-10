@@ -9,7 +9,7 @@
     "iAm": "<Soy ",
     "frontEnd": "desarrollador Front End />",
     "graduate": "graduado de Licenciatura en Informática  />",
-    "student": "estudiante",
+    "student": "estudiante />",
     "getInTouch": "Contactame"
   },
   "about": {
@@ -19,7 +19,9 @@
       "second": "Inicié la universidad sin ningún conocimiento previo de programación y desde el día uno supe que quería dedicarme a esto.",
       "third": "Empecé a estudiar de manera autodidacta para dedicarme al desarrollo web. Comencé con lo básico de HTML, CSS y JavaScript hasta que tuve la primer materia con la tecnología React."
     },
-    "downloadCV": "Descargar CV"
+    "downloadCV": "Descargar CV",
+    "programmingLanguages": "Lenguajes de programación",
+    "librariesAndFrameworks": "Librerías & Frameworks"
   }
 }
   
