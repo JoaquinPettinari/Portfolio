@@ -27,9 +27,11 @@ function Home () {
       <NavBar />
       <Grid container sx={backgroundStyle}>
         <Grid item>
-          <Typography variant="h3">{'Joaquin Pettinari'}</Typography>
+          <Typography color="secondary" variant="h3">
+            {'Joaquin Pettinari'}
+          </Typography>
           <Box sx={{ display: 'flex' }}>
-            <Typography variant={'h5'} width={'100%'}>
+            <Typography color="secondary" variant={'h5'} width={'100%'}>
               {t('home.iAm')}
               <Typewriter
                 words={[

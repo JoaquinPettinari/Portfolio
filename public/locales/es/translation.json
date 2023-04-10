@@ -1,16 +1,25 @@
 {
-    "navbar": {
-      "about": "Sobre mi",
-      "jobs": "Trabajos",
-      "studies": "Estudios",
-      "contact": "Contacto"
+  "navbar": {
+    "about": "Sobre mi",
+    "jobs": "Trabajos",
+    "studies": "Estudios",
+    "contact": "Contacto"
+  },
+  "home": {
+    "iAm": "<Soy ",
+    "frontEnd": "desarrollador Front End />",
+    "graduate": "graduado de Licenciatura en Informática  />",
+    "student": "estudiante",
+    "getInTouch": "Contactame"
+  },
+  "about": {
+    "profession": "Desarrollador Front End",
+    "myDescription": {
+      "first": "La tecnología siempre me fascinó.",
+      "second": "Inicié la universidad sin ningún conocimiento previo de programación y desde el día uno supe que quería dedicarme a esto.",
+      "third": "Empecé a estudiar de manera autodidacta para dedicarme al desarrollo web. Comencé con lo básico de HTML, CSS y JavaScript hasta que tuve la primer materia con la tecnología React."
     },
-    "home": {
-      "iAm": "<Soy ",
-      "frontEnd": "desarrollador Front End />",
-      "graduate": "graduado de Licenciatura en Informática  />",
-      "student": "estudiante",
-      "getInTouch": "Contactame"
-    }
+    "downloadCV": "Descargar CV"
+  }
 }
   
