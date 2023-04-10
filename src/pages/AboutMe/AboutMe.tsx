@@ -32,7 +32,13 @@ const photoStyle = {
 function AboutMe () {
   return (
     <Section id="about-me">
-      <Grid container item alignContent={'center'} justifyContent={'center'}>
+      <Grid
+        container
+        item
+        alignContent={'center'}
+        justifyContent={'center'}
+        pt={2}
+      >
         <Grid item xs={12} sm={5} md={4}>
           <img
             src={joaquinPhoto}
