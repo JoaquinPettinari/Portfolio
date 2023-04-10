@@ -1,11 +1,11 @@
-import { Typography } from '@mui/material'
 import { memo } from 'react'
 import Section from '../../ui/Section'
+import SectionTitle from '../../ui/SectionTitle'
 
 function Jobs () {
   return (
     <Section id="jobs">
-      <Typography color="primary">Jobs</Typography>
+      <SectionTitle title="Jobs" />
     </Section>
   )
 }

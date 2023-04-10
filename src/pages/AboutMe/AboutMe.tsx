@@ -1,5 +1,5 @@
 import { Grid } from '@mui/material'
-import { memo } from 'react'
+import { memo, useMemo } from 'react'
 import Section from '../../ui/Section'
 import joaquinPhoto from '../../assets/joaquinPicture.jpg'
 import AboutMeText from './AboutMeText'
@@ -14,6 +14,7 @@ import CssImage from '../../assets/CSS.png'
 import NodeJsImage from '../../assets/nodejs.png'
 import TechnologysList from './TechnologysList'
 import { useTranslation } from 'react-i18next'
+import { Fade } from 'react-awesome-reveal'
 
 const photoStyle = {
   height: '300px',
@@ -32,6 +33,16 @@ const photoStyle = {
 
 function AboutMe () {
   const { t } = useTranslation()
+  const aboutSkills = useMemo(
+    () => [
+      { list: technologys, label: 'about.programmingLanguages' },
+      {
+        list: librariesAndFrameworks,
+        label: 'about.librariesAndFrameworks'
+      }
+    ],
+    [t]
+  )
   return (
     <Section id="about-me">
       <Grid
@@ -42,27 +53,26 @@ function AboutMe () {
         pt={2}
       >
         <Grid item xs={12} sm={5} md={4}>
-          <img
-            src={joaquinPhoto}
-            alt="Photo about me in Perito Moreno, Patagonia Argentina"
-            style={photoStyle}
-          />
+          <Fade direction="up" triggerOnce>
+            <img
+              src={joaquinPhoto}
+              alt="Photo about me in Perito Moreno, Patagonia Argentina"
+              style={photoStyle}
+            />
+          </Fade>
         </Grid>
         <Grid item xs={12} sm={5} md={4}>
-          <AboutMeText />
+          <Fade direction="up" triggerOnce>
+            <AboutMeText />
+          </Fade>
         </Grid>
-        <Grid item xs={8} pt={4}>
-          <TechnologysList
-            technologys={technologys}
-            label={t('about.programmingLanguages')}
-          />
-        </Grid>
-        <Grid item xs={8} pt={4}>
-          <TechnologysList
-            technologys={librariesAndFrameworks}
-            label={t('about.librariesAndFrameworks')}
-          />
-        </Grid>
+        {aboutSkills.map((tech, index) => (
+          <Grid item xs={8} pt={4} key={index}>
+            <Fade direction="up" triggerOnce>
+              <TechnologysList technologys={tech.list} label={t(tech.label)} />
+            </Fade>
+          </Grid>
+        ))}
       </Grid>
     </Section>
   )
