@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import { Box, Grid, Typography } from '@mui/material'
+import { Divider, Grid, Typography } from '@mui/material'
 
 interface SectionTitleProps {
   title: string
@@ -7,25 +7,17 @@ interface SectionTitleProps {
 
 function SectionTitle ({ title }: SectionTitleProps) {
   return (
-    <Grid item xs={4}>
-      <Box
-        sx={{
-          borderBottom: '1px solid black',
-          borderTop: '1px solid black',
-          borderRadius: '0',
-          marginTop: '90px',
-          textAlign: 'center'
-        }}
-      >
+    <Grid item xs={5}>
+      <Divider>
         <Typography
           variant="h3"
           color="primary"
-          fontFamily={'fantasy'}
+          fontFamily={'math'}
           fontWeight={400}
         >
           {title}
         </Typography>
-      </Box>
+      </Divider>
     </Grid>
   )
 }
