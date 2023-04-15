@@ -1,16 +1,11 @@
 import { memo } from 'react'
-import { Box, Button, Grid, Typography } from '@mui/material'
+import { Box, Grid, Typography } from '@mui/material'
 import { Typewriter } from 'react-simple-typewriter'
 import Section from '../../ui/Section'
-import homeBackground from '../../assets/homeBackground.jpg'
 import { useTranslation } from 'react-i18next'
+import PrimaryButton from '../../ui/PrimaryButton'
 
 const backgroundStyle = {
-  backgroundImage: `url(${homeBackground})`,
-  backgroundAttachment: 'fixed',
-  backgroundRepeat: 'no-repeat',
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
   position: 'relative',
   width: '100%',
   minHeight: '100vh',
@@ -25,11 +20,11 @@ function Home () {
     <Section id="">
       <Grid container sx={backgroundStyle}>
         <Grid item>
-          <Typography color="secondary" variant="h3">
+          <Typography variant="h3" color="text.primary">
             {'Joaquin Pettinari'}
           </Typography>
           <Box sx={{ display: 'flex' }}>
-            <Typography color="secondary" variant={'h5'} width={'100%'}>
+            <Typography variant={'h5'} width={'100%'}>
               {t('home.iAm')}
               <Typewriter
                 words={[
@@ -45,9 +40,9 @@ function Home () {
               />
             </Typography>
           </Box>
-          <Button variant="contained" sx={{ mt: 2 }} href="#contact-me">
+          <PrimaryButton sx={{ mt: 2 }} href="#contact-me">
             {t('home.getInTouch')}
-          </Button>
+          </PrimaryButton>
         </Grid>
       </Grid>
     </Section>

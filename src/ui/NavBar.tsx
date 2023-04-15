@@ -53,7 +53,11 @@ function NavBar () {
 
   return (
     <HideOnScroll>
-      <AppBar position="fixed">
+      <AppBar
+        position="fixed"
+        elevation={0}
+        sx={{ backgroundColor: 'background.default' }}
+      >
         <Container maxWidth="lg">
           <Toolbar disableGutters>
             <Typography

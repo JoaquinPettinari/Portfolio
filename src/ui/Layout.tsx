@@ -8,7 +8,11 @@ interface LayoutProps {
 
 function Layout ({ children }: LayoutProps) {
   return (
-    <Grid container justifyContent={'center'}>
+    <Grid
+      container
+      justifyContent={'center'}
+      sx={{ backgroundColor: 'background.default' }}
+    >
       <SocialMedia />
       <Grid item xs={12}>
         {children}
