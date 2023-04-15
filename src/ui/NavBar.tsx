@@ -10,19 +10,8 @@ import Container from '@mui/material/Container'
 import Button from '@mui/material/Button'
 import Slide from '@mui/material/Slide'
 import MenuItem from '@mui/material/MenuItem'
-import spain from '../assets/spain.png'
-import england from '../assets/england.png'
 import { type MouseEvent, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { LANGUAGUE } from '../utils/languages'
-import { equals } from 'ramda'
-
-interface LanguageIconProps {
-  onClick: (language: string) => void
-  languague: string
-  image: string
-  currentLanguage: string
-}
 
 interface Props {
   window?: () => Window
@@ -31,7 +20,7 @@ interface Props {
 
 function NavBar () {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null)
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   const pages = useMemo(
     () => [
       {
@@ -60,10 +49,6 @@ function NavBar () {
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null)
-  }
-
-  const changeLanguage = (language: string) => {
-    i18n.changeLanguage(language)
   }
 
   return (
@@ -165,20 +150,6 @@ function NavBar () {
                 </Button>
               ))}
             </Box>
-            <Box sx={{ flexGrow: 0 }}>
-              <LanguageIcon
-                image={spain}
-                onClick={changeLanguage}
-                languague={LANGUAGUE.Es}
-                currentLanguage={i18n.language}
-              />
-              <LanguageIcon
-                image={england}
-                onClick={changeLanguage}
-                languague={LANGUAGUE.En}
-                currentLanguage={i18n.language}
-              />
-            </Box>
           </Toolbar>
         </Container>
       </AppBar>
@@ -188,11 +159,9 @@ function NavBar () {
 
 function HideOnScroll (props: Props) {
   const { children, window } = props
-  // Note that you normally won't need to set the window ref as useScrollTrigger
-  // will default to window.
-  // This is only being set here because the demo is in an iframe.
+
   const trigger = useScrollTrigger({
-    target: (window != null) ? window() : undefined
+    target: window != null ? window() : undefined
   })
 
   return (
@@ -201,23 +170,5 @@ function HideOnScroll (props: Props) {
     </Slide>
   )
 }
-
-const LanguageIcon = ({
-  onClick,
-  languague,
-  image,
-  currentLanguage
-}: LanguageIconProps) => (
-  <Button
-    onClick={() => {
-      onClick(languague)
-    }}
-    sx={{
-      backgroundColor: equals(languague, currentLanguage) ? '#333333' : ''
-    }}
-  >
-    <img src={image} alt={languague} />
-  </Button>
-)
 
 export default NavBar

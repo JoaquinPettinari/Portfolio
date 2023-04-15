@@ -5,17 +5,22 @@ import Jobs from './pages/Jobs/Jobs'
 import ContactMe from './pages/ContactMe/ContactMe'
 import Studies from './pages/Studies/Studies'
 import './i18n'
+import NavBar from './ui/NavBar'
+import Layout from './ui/Layout'
 
 function App () {
   return (
     <Grid container>
-      <Home />
-      <Container maxWidth="lg">
-        <AboutMe />
-        <Jobs />
-        <Studies />
-        <ContactMe />
-      </Container>
+      <NavBar />
+      <Layout>
+        <Home />
+        <Container maxWidth="lg">
+          <AboutMe />
+          <Jobs />
+          <Studies />
+          <ContactMe />
+        </Container>
+      </Layout>
     </Grid>
   )
 }

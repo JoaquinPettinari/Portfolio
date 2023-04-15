@@ -1,5 +1,4 @@
 import { memo } from 'react'
-import NavBar from '../../ui/NavBar'
 import { Box, Button, Grid, Typography } from '@mui/material'
 import { Typewriter } from 'react-simple-typewriter'
 import Section from '../../ui/Section'
@@ -24,7 +23,6 @@ function Home () {
   const { t } = useTranslation()
   return (
     <Section id="">
-      <NavBar />
       <Grid container sx={backgroundStyle}>
         <Grid item>
           <Typography color="secondary" variant="h3">
