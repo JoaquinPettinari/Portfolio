@@ -6,23 +6,12 @@ import Typography from '@mui/material/Typography'
 import useScrollTrigger from '@mui/material/useScrollTrigger'
 import Menu from '@mui/material/Menu'
 import MenuIcon from '@mui/icons-material/Menu'
-import Container from '@mui/material/Container'
 import Button from '@mui/material/Button'
 import Slide from '@mui/material/Slide'
 import MenuItem from '@mui/material/MenuItem'
-import spain from '../assets/spain.png'
-import england from '../assets/england.png'
 import { type MouseEvent, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { LANGUAGUE } from '../utils/languages'
-import { equals } from 'ramda'
-
-interface LanguageIconProps {
-  onClick: (language: string) => void
-  languague: string
-  image: string
-  currentLanguage: string
-}
+import CVJoaquin from '../assets/Joaquin_Pettinari_Resume.pdf'
 
 interface Props {
   window?: () => Window
@@ -31,7 +20,7 @@ interface Props {
 
 function NavBar () {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null)
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   const pages = useMemo(
     () => [
       {
@@ -62,125 +51,111 @@ function NavBar () {
     setAnchorElNav(null)
   }
 
-  const changeLanguage = (language: string) => {
-    i18n.changeLanguage(language)
-  }
-
   return (
     <HideOnScroll>
-      <AppBar position="fixed">
-        <Container maxWidth="lg">
-          <Toolbar disableGutters>
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              href="#"
-              sx={{
-                mr: 2,
-                display: { xs: 'none', md: 'flex' },
-                fontFamily: 'monospace',
-                fontWeight: 700,
-                color: 'inherit',
-                textDecoration: 'none'
-              }}
-            >
-              JP
-            </Typography>
+      <AppBar
+        position="fixed"
+        elevation={0}
+        sx={{ backgroundColor: 'background.default' }}
+      >
+        <Toolbar disableGutters>
+          <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            href="#"
+            color="primary.main"
+            sx={{
+              ml: '35px',
+              display: { xs: 'none', md: 'flex' },
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              textDecoration: 'none'
+            }}
+          >
+            JP
+          </Typography>
 
-            <Box
-              sx={{
-                flexGrow: 1,
-                display: { xs: 'flex', md: 'none' }
-              }}
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: 'flex', md: 'none' }
+            }}
+          >
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              sx={{ color: 'primary.main' }}
             >
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit"
-              >
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: 'bottom',
-                  horizontal: 'left'
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'left'
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{
-                  display: { xs: 'block', md: 'none' }
-                }}
-              >
-                {pages.map(({ label, link }, index) => (
-                  <MenuItem key={index} onClick={handleCloseNavMenu}>
-                    <Button href={link} sx={{ textTransform: 'capitalize' }}>
-                      {label}
-                    </Button>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box>
-            <Typography
-              variant="h5"
-              noWrap
-              component="a"
-              href="#"
-              sx={{
-                mr: 2,
-                display: { xs: 'flex', md: 'none' },
-                flexGrow: 1,
-                fontFamily: 'monospace',
-                fontWeight: 700,
-                color: 'inherit',
-                textDecoration: 'none'
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left'
               }}
-            >
-              JP
-            </Typography>
-            <Box
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left'
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
               sx={{
-                flexGrow: 1,
-                display: { xs: 'none', md: 'flex' },
-                justifyContent: 'center'
+                display: { xs: 'block', md: 'none' }
               }}
             >
               {pages.map(({ label, link }, index) => (
-                <Button
-                  key={index}
-                  href={link}
-                  sx={{ my: 2, color: 'white', display: 'block' }}
-                >
-                  {label}
-                </Button>
+                <MenuItem key={index} onClick={handleCloseNavMenu}>
+                  <Button href={link}>
+                    {`0${index + 1}.`}&nbsp;<Typography>{label}</Typography>
+                  </Button>
+                </MenuItem>
               ))}
-            </Box>
-            <Box sx={{ flexGrow: 0 }}>
-              <LanguageIcon
-                image={spain}
-                onClick={changeLanguage}
-                languague={LANGUAGUE.Es}
-                currentLanguage={i18n.language}
-              />
-              <LanguageIcon
-                image={england}
-                onClick={changeLanguage}
-                languague={LANGUAGUE.En}
-                currentLanguage={i18n.language}
-              />
-            </Box>
-          </Toolbar>
-        </Container>
+            </Menu>
+          </Box>
+          <Typography
+            variant="h5"
+            noWrap
+            component="a"
+            href="#"
+            color="primary.main"
+            sx={{
+              mr: 2,
+              display: { xs: 'flex', md: 'none' },
+              justifyContent: 'end',
+              flexGrow: 1,
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              textDecoration: 'none'
+            }}
+          >
+            JP
+          </Typography>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: 'none', md: 'flex' },
+              justifyContent: 'end'
+            }}
+          >
+            {pages.map(({ label, link }, index) => (
+              <Button key={index} href={link} sx={{ my: 2, display: 'flex' }}>
+                {`0${index + 1}.`}&nbsp;<Typography>{label}</Typography>
+              </Button>
+            ))}
+          </Box>
+          <Box sx={{ mx: '35px', display: { xs: 'none', md: 'flex' } }}>
+            <Button variant="outlined" href={CVJoaquin} target="_blank">
+              {t('about.downloadCV')}
+            </Button>
+          </Box>
+        </Toolbar>
       </AppBar>
     </HideOnScroll>
   )
@@ -188,11 +163,9 @@ function NavBar () {
 
 function HideOnScroll (props: Props) {
   const { children, window } = props
-  // Note that you normally won't need to set the window ref as useScrollTrigger
-  // will default to window.
-  // This is only being set here because the demo is in an iframe.
+
   const trigger = useScrollTrigger({
-    target: (window != null) ? window() : undefined
+    target: window != null ? window() : undefined
   })
 
   return (
@@ -201,23 +174,5 @@ function HideOnScroll (props: Props) {
     </Slide>
   )
 }
-
-const LanguageIcon = ({
-  onClick,
-  languague,
-  image,
-  currentLanguage
-}: LanguageIconProps) => (
-  <Button
-    onClick={() => {
-      onClick(languague)
-    }}
-    sx={{
-      backgroundColor: equals(languague, currentLanguage) ? '#333333' : ''
-    }}
-  >
-    <img src={image} alt={languague} />
-  </Button>
-)
 
 export default NavBar
