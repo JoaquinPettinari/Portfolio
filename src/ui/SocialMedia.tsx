@@ -21,7 +21,15 @@ function SocialMedia () {
     []
   )
   return (
-    <Box sx={{ position: 'fixed', bottom: 0, left: 25, zIndex: 1000 }}>
+    <Box
+      sx={{
+        position: 'fixed',
+        bottom: 0,
+        left: 25,
+        zIndex: 1000,
+        display: { xs: 'none', md: 'block' }
+      }}
+    >
       <Grid container flexDirection={'column'} alignItems={'center'}>
         {socialMediaList.map(({ Icon, link }, index) => (
           <Grid item key={index}>

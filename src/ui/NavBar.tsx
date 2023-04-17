@@ -88,7 +88,7 @@ function NavBar () {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
+              sx={{ color: 'primary.main' }}
             >
               <MenuIcon />
             </IconButton>
@@ -112,7 +112,9 @@ function NavBar () {
             >
               {pages.map(({ label, link }, index) => (
                 <MenuItem key={index} onClick={handleCloseNavMenu}>
-                  <Button href={link}>{`0${index + 1}. ${label}`}</Button>
+                  <Button href={link}>
+                    {`0${index + 1}.`}&nbsp;<Typography>{label}</Typography>
+                  </Button>
                 </MenuItem>
               ))}
             </Menu>
@@ -122,13 +124,14 @@ function NavBar () {
             noWrap
             component="a"
             href="#"
+            color="primary.main"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
+              justifyContent: 'end',
               flexGrow: 1,
               fontFamily: 'monospace',
               fontWeight: 700,
-              color: 'inherit',
               textDecoration: 'none'
             }}
           >
@@ -147,7 +150,7 @@ function NavBar () {
               </Button>
             ))}
           </Box>
-          <Box sx={{ mx: '35px' }}>
+          <Box sx={{ mx: '35px', display: { xs: 'none', md: 'flex' } }}>
             <Button variant="outlined" href={CVJoaquin} target="_blank">
               {t('about.downloadCV')}
             </Button>

@@ -21,7 +21,14 @@ function LanguageSwitch () {
   }
 
   return (
-    <Box sx={{ position: 'fixed', bottom: 0, right: 25 }}>
+    <Box
+      sx={{
+        position: 'fixed',
+        bottom: 0,
+        right: 25,
+        display: { xs: 'none', md: 'block' }
+      }}
+    >
       <Grid
         container
         flexDirection={'column'}
