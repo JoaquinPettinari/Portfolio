@@ -6,12 +6,12 @@ import Typography from '@mui/material/Typography'
 import useScrollTrigger from '@mui/material/useScrollTrigger'
 import Menu from '@mui/material/Menu'
 import MenuIcon from '@mui/icons-material/Menu'
-import Container from '@mui/material/Container'
 import Button from '@mui/material/Button'
 import Slide from '@mui/material/Slide'
 import MenuItem from '@mui/material/MenuItem'
 import { type MouseEvent, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import CVJoaquin from '../assets/Joaquin_Pettinari_Resume.pdf'
 
 interface Props {
   window?: () => Window
@@ -58,104 +58,101 @@ function NavBar () {
         elevation={0}
         sx={{ backgroundColor: 'background.default' }}
       >
-        <Container maxWidth="lg">
-          <Toolbar disableGutters>
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              href="#"
-              sx={{
-                mr: 2,
-                display: { xs: 'none', md: 'flex' },
-                fontFamily: 'monospace',
-                fontWeight: 700,
-                color: 'inherit',
-                textDecoration: 'none'
-              }}
-            >
-              JP
-            </Typography>
+        <Toolbar disableGutters>
+          <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            href="#"
+            color="primary.main"
+            sx={{
+              ml: '35px',
+              display: { xs: 'none', md: 'flex' },
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              textDecoration: 'none'
+            }}
+          >
+            JP
+          </Typography>
 
-            <Box
-              sx={{
-                flexGrow: 1,
-                display: { xs: 'flex', md: 'none' }
-              }}
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: 'flex', md: 'none' }
+            }}
+          >
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
             >
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit"
-              >
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: 'bottom',
-                  horizontal: 'left'
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'left'
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{
-                  display: { xs: 'block', md: 'none' }
-                }}
-              >
-                {pages.map(({ label, link }, index) => (
-                  <MenuItem key={index} onClick={handleCloseNavMenu}>
-                    <Button href={link} sx={{ textTransform: 'capitalize' }}>
-                      {label}
-                    </Button>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box>
-            <Typography
-              variant="h5"
-              noWrap
-              component="a"
-              href="#"
-              sx={{
-                mr: 2,
-                display: { xs: 'flex', md: 'none' },
-                flexGrow: 1,
-                fontFamily: 'monospace',
-                fontWeight: 700,
-                color: 'inherit',
-                textDecoration: 'none'
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left'
               }}
-            >
-              JP
-            </Typography>
-            <Box
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left'
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
               sx={{
-                flexGrow: 1,
-                display: { xs: 'none', md: 'flex' },
-                justifyContent: 'center'
+                display: { xs: 'block', md: 'none' }
               }}
             >
               {pages.map(({ label, link }, index) => (
-                <Button
-                  key={index}
-                  href={link}
-                  sx={{ my: 2, color: 'white', display: 'block' }}
-                >
-                  {label}
-                </Button>
+                <MenuItem key={index} onClick={handleCloseNavMenu}>
+                  <Button href={link}>{`0${index + 1}. ${label}`}</Button>
+                </MenuItem>
               ))}
-            </Box>
-          </Toolbar>
-        </Container>
+            </Menu>
+          </Box>
+          <Typography
+            variant="h5"
+            noWrap
+            component="a"
+            href="#"
+            sx={{
+              mr: 2,
+              display: { xs: 'flex', md: 'none' },
+              flexGrow: 1,
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              color: 'inherit',
+              textDecoration: 'none'
+            }}
+          >
+            JP
+          </Typography>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: 'none', md: 'flex' },
+              justifyContent: 'end'
+            }}
+          >
+            {pages.map(({ label, link }, index) => (
+              <Button key={index} href={link} sx={{ my: 2, display: 'flex' }}>
+                {`0${index + 1}.`}&nbsp;<Typography>{label}</Typography>
+              </Button>
+            ))}
+          </Box>
+          <Box sx={{ mx: '35px' }}>
+            <Button variant="outlined" href={CVJoaquin} target="_blank">
+              {t('about.downloadCV')}
+            </Button>
+          </Box>
+        </Toolbar>
       </AppBar>
     </HideOnScroll>
   )

@@ -62,9 +62,7 @@ const LanguageIcon = ({
     onClick={() => {
       onClick(languague)
     }}
-    sx={{
-      backgroundColor: equals(languague, currentLanguage) ? '#333333' : ''
-    }}
+    variant={equals(languague, currentLanguage) ? 'outlined' : 'text'}
   >
     <img src={image} alt={languague} />
   </Button>

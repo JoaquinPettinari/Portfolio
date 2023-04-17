@@ -21,11 +21,14 @@ function SocialMedia () {
     []
   )
   return (
-    <Box sx={{ position: 'fixed', bottom: 0, left: 25 }}>
+    <Box sx={{ position: 'fixed', bottom: 0, left: 25, zIndex: 1000 }}>
       <Grid container flexDirection={'column'} alignItems={'center'}>
         {socialMediaList.map(({ Icon, link }, index) => (
           <Grid item key={index}>
-            <IconButton onClick={() => window.open(link, '_blank')}>
+            <IconButton
+              sx={{ color: 'primary.light', cursor: 'pointer' }}
+              onClick={() => window.open(link, '_blank')}
+            >
               <Icon />
             </IconButton>
           </Grid>

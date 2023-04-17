@@ -1,6 +1,7 @@
 import { Divider, Grid } from '@mui/material'
 import SocialMedia from './SocialMedia'
 import LanguageSwitch from './LanguageSwitch'
+import theme from '../theme'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -23,7 +24,14 @@ function Layout ({ children }: LayoutProps) {
 }
 
 export const LayoutDivider = () => (
-  <Divider orientation="vertical" sx={{ height: 90, borderWidth: 2 }} />
+  <Divider
+    orientation="vertical"
+    sx={{
+      height: 90,
+      borderWidth: 1,
+      borderColor: theme.palette.primary.light
+    }}
+  />
 )
 
 export default Layout

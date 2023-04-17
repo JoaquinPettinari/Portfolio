@@ -4,7 +4,8 @@ const theme = createTheme({
   palette: {
     primary: {
       main: '#64ffda',
-      dark: '#171717'
+      dark: '#171717',
+      light: '#a8b2d1'
     },
     secondary: {
       main: '#86868B'
@@ -22,7 +23,7 @@ const theme = createTheme({
       textTransform: 'capitalize'
     },
     allVariants: {
-      color: '#EAEAEA'
+      color: '#ccd6f6'
     }
   }
 })
